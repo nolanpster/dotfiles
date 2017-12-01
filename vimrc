@@ -142,6 +142,8 @@ set t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
+" But disable middle button paste
+:map <MiddleMouse> <Nop>
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -193,7 +195,8 @@ let mapleader=","
 set t_Co=256
 colo molokai
 
-set colorcolumn=80
+set colorcolumn=120
+set tw=120
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 nnoremap <leader>e :CtrlP<CR>
@@ -243,3 +246,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'udalov/kotlin-vim'
 
 call plug#end()
+
+" netrw settings
+" -----------------------------------------------------------------------------
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"    autocmd!
+"    autocmd VimEnter * :Vexplore
+"augroup END
